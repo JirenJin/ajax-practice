@@ -37,7 +37,10 @@ function loadData() {
           $('#nytimes-articles').append(template);
         });
       });
-    });
+    })
+      .fail(function() {
+        $('#nytimes-header').text('New York Times Articles Could Not Be Loaded');
+      });
 
     return false;
 };
